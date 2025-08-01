@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 export function Hero() {
+  const { language } = useLanguage()
   const [text, setText] = useState('')
-  const fullText = "Hello!  I'm crazyfrank, a Backend Developer and same as a junior student at CQUT"
+  const t = translations[language].hero
+  const fullText = t.title
 
   useEffect(() => {
+    setText('')
     let i = 0
     const timer = setInterval(() => {
       setText(fullText.slice(0, i))
@@ -16,12 +21,12 @@ export function Hero() {
     }, 100)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [fullText])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       })
@@ -39,7 +44,9 @@ export function Hero() {
         >
           <h1 className="hero-title">
             <span className="terminal-prompt">$</span>
-            <span className="typing-text">{text}</span>
+            <span className="typing-text">
+              {text}
+            </span>
             <span className="cursor">|</span>
           </h1>
 
@@ -49,7 +56,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="hero-subtitle"
           >
-            Crafting beautiful digital experiences with modern technologies
+            {t.subtitle}
           </motion.p>
 
           <motion.div
@@ -58,18 +65,18 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 2 }}
             className="hero-cta"
           >
-            <button 
+            <button
               className="cta-button primary"
               onClick={() => scrollToSection('projects')}
             >
-              <span>View My Work</span>
+              <span>{t.viewWork}</span>
               <div className="button-glow"></div>
             </button>
-            <button 
+            <button
               className="cta-button secondary"
               onClick={() => scrollToSection('contact')}
             >
-              <span>Get In Touch</span>
+              <span>{t.getInTouch}</span>
             </button>
           </motion.div>
         </motion.div>

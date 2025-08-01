@@ -1,22 +1,30 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 export function Skills() {
+  const { language } = useLanguage()
+  const t = translations[language].skills
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true
   })
 
-  const skills = {
+  const skills = language === 'en' ? {
     "Backend": [
       "Golang", "Python", "Gin", "gRPC", "Django", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Milvus", "Langchain"
     ],
     "Tools & Others": [
-      "Git", "Docker", "Kubernetes", "AWS", "Vercel", "Coze", "Dify", 
+      "Git", "Docker", "Kubernetes", "AWS", "Vercel", "Coze", "Dify"
     ],
-    "IDE":[
+    "IDE": [
       "Jetbrains", "Cursor", "Trae", "VSCode"
     ]
+  } : {
+    [t.categories["Backend"]]: t.skillsList["Backend"],
+    [t.categories["Tools & Others"]]: t.skillsList["Tools & Others"],
+    [t.categories["IDE"]]: t.skillsList["IDE"]
   }
 
   const containerVariants = {
@@ -59,7 +67,7 @@ export function Skills() {
           <motion.div variants={categoryVariants} className="section-header">
             <h2 className="section-title">
               <span className="section-number">02.</span>
-              Skills & Technologies
+              {t.title}
             </h2>
           </motion.div>
 

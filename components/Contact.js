@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 export function Contact() {
+  const { language } = useLanguage()
+  const t = translations[language].contact
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true
@@ -38,20 +42,19 @@ export function Contact() {
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="section-title">
               <span className="section-number">04.</span>
-              Get In Touch
+              {t.title}
             </h2>
           </motion.div>
 
           <motion.div variants={itemVariants} className="contact-text">
             <p>
-              I'm currently looking for new opportunities, my inbox is always open. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              {t.description}
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="contact-button">
             <a href="mailto:axu9417@gmail.com" className="cta-button primary">
-              <span>Say Hello</span>
+              <span>{t.button}</span>
               <div className="button-glow"></div>
             </a>
           </motion.div>
@@ -65,7 +68,7 @@ export function Contact() {
           </motion.div>
 
           <motion.footer variants={itemVariants} className="footer">
-            <p>&copy; 2025 Crazyfrank. Built with Next.js & Framer Motion.</p>
+            <p>&copy; 2025 Crazyfrank. {t.footer}</p>
           </motion.footer>
         </motion.div>
       </div>
