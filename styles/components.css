@@ -68,7 +68,7 @@
 .language-toggle {
   position: fixed;
   top: 2rem;
-  right: 8rem;
+  right: 10rem;
   z-index: 1000;
 }
 
@@ -728,7 +728,7 @@
   
   .language-toggle {
     top: 1rem;
-    right: 5rem;
+    right: 6rem;
   }
   
   .hero-title {

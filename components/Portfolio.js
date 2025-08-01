@@ -13,7 +13,6 @@ import { ThemeToggle } from './ThemeToggle'
 import { LanguageToggle } from './LanguageToggle'
 import { ParticleBackground } from './ParticleBackground'
 
-// 包装Hero组件，使其在语言切换时重新挂载
 function HeroWithLanguage() {
   const { language } = useLanguage()
   return <Hero key={language} />
