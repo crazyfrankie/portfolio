@@ -27,7 +27,7 @@ export function Contact() {
   }
 
   return (
-    <section className="contact" ref={ref}>
+    <section id="contact" className="contact" ref={ref}>
       <div className="container">
         <motion.div
           variants={containerVariants}
@@ -37,7 +37,7 @@ export function Contact() {
         >
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="section-title">
-              <span className="section-number">05.</span>
+              <span className="section-number">04.</span>
               Get In Touch
             </h2>
           </motion.div>
@@ -50,7 +50,7 @@ export function Contact() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="contact-button">
-            <a href="mailto:your@email.com" className="cta-button primary">
+            <a href="mailto:axu9417@gmail.com" className="cta-button primary">
               <span>Say Hello</span>
               <div className="button-glow"></div>
             </a>

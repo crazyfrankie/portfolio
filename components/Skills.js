@@ -9,11 +9,14 @@ export function Skills() {
 
   const skills = {
     "Backend": [
-      "Golang", "Python", "Gin", "gRPC", "Django", "MySQL", "PostgreSQL", "MongoDB", "Redis"
+      "Golang", "Python", "Gin", "gRPC", "Django", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Milvus", "Langchain"
     ],
     "Tools & Others": [
-      "Git", "Docker", "Kubernetes", "AWS", "Vercel"
+      "Git", "Docker", "Kubernetes", "AWS", "Vercel", "Coze", "Dify", 
     ],
+    "IDE":[
+      "Jetbrains", "Cursor", "Trae", "VSCode"
+    ]
   }
 
   const containerVariants = {

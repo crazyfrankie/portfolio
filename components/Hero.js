@@ -18,6 +18,16 @@ export function Hero() {
     return () => clearInterval(timer)
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -48,11 +58,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 2 }}
             className="hero-cta"
           >
-            <button className="cta-button primary">
+            <button 
+              className="cta-button primary"
+              onClick={() => scrollToSection('projects')}
+            >
               <span>View My Work</span>
               <div className="button-glow"></div>
             </button>
-            <button className="cta-button secondary">
+            <button 
+              className="cta-button secondary"
+              onClick={() => scrollToSection('contact')}
+            >
               <span>Get In Touch</span>
             </button>
           </motion.div>
