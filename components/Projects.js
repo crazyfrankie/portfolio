@@ -65,7 +65,7 @@ export function Projects() {
   const otherProjects = projects.filter(p => !p.featured)
 
   return (
-    <section className="projects" ref={ref}>
+    <section id="projects" className="projects" ref={ref}>
       <div className="container">
         <motion.div
           variants={containerVariants}
