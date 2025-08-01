@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 export function Experience() {
+  const { language } = useLanguage()
+  const t = translations[language].experience
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true
@@ -10,41 +14,7 @@ export function Experience() {
 
   const [activeTab, setActiveTab] = useState(0)
 
-  const experiences = [
-    {
-      company: "Tech Company",
-      position: "Senior Full Stack Developer",
-      duration: "2022 - Present",
-      description: [
-        "Developed and maintained web applications using React, Node.js, and PostgreSQL",
-        "Led a team of 4 developers in building a customer-facing dashboard",
-        "Improved application performance by 40% through code optimization",
-        "Implemented CI/CD pipelines using GitHub Actions and AWS"
-      ]
-    },
-    {
-      company: "Startup Inc",
-      position: "Frontend Developer",
-      duration: "2020 - 2022",
-      description: [
-        "Built responsive web applications using React and TypeScript",
-        "Collaborated with designers to implement pixel-perfect UI components",
-        "Integrated third-party APIs and payment systems",
-        "Mentored junior developers and conducted code reviews"
-      ]
-    },
-    {
-      company: "Digital Agency",
-      position: "Web Developer",
-      duration: "2018 - 2020",
-      description: [
-        "Created custom WordPress themes and plugins for clients",
-        "Developed e-commerce solutions using WooCommerce",
-        "Optimized websites for SEO and performance",
-        "Worked directly with clients to gather requirements"
-      ]
-    }
-  ]
+  const experiences = t.jobs
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -77,7 +47,7 @@ export function Experience() {
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="section-title">
               <span className="section-number">03.</span>
-              Where I've Worked
+              {t.title}
             </h2>
           </motion.div>
 

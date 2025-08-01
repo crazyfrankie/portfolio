@@ -1,50 +1,17 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 
 export function Projects() {
+  const { language } = useLanguage()
+  const t = translations[language].projects
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true
   })
 
-  const projects = [
-    {
-      title: "Onlinejudge Evaluation System",
-      description:
-        "A secure online code evaluation system built with Docker and gVisor for sandboxing. Enforces resource limits via Linux CGroup and Namespace. Features asynchronous task processing using Kafka, in-memory caching with Redis, and real-time monitoring with Prometheus.",
-      tech: ["Gin", "GORM", "MySQL", "Redis", "Kafka", "Prometheus", "Docker"],
-      github: "https://github.com/crazyfrankie/onlinejudge",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "Voidx: LLMOps Workflow Platform",
-      description:
-        "An intelligent agent platform powered by Docker, integrating models like Kimi and Qwen. Supports multi-agent orchestration, RAG-based retrieval using Milvus, tool invocation via FunctionCall/ReACT, and workflow chaining with Langchain.",
-      tech: ["Langchain", "PostgreSQL", "Milvus", "Kafka", "Docker"],
-      github: "https://github.com/crazyfrankie/voidx",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "ZDocker: Lightweight Container Runtime",
-      description:
-        "A simplified Docker runtime built from scratch in Go. Implements Linux CGroup and Namespace isolation, image loading, overlay file system, and basic container lifecycle management without relying on containerd or runc.",
-      tech: ["Linux Namespace", "CGroup", "OverlayFS", "Go"],
-      github: "https://github.com/crazyfrankie/zdocker",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "Cloud: Object Storage System",
-      description:
-        "A cloud storage service powered by MinIO with EC-based redundancy. Supports multipart uploads, resumable transfers, and task orchestration via Kafka. Backend built with Gin and GORM, with observability through Prometheus.",
-      tech: ["Gin", "GORM", "MinIO", "MySQL", "Redis", "Kafka", "Prometheus"],
-      github: "https://github.com/crazyfrankie/cloud",
-      live: "#",
-      featured: false
-    }
-  ]
+  const projects = t.projectList
 
 
   const containerVariants = {
@@ -81,7 +48,7 @@ export function Projects() {
           <motion.div variants={projectVariants} className="section-header">
             <h2 className="section-title">
               <span className="section-number">03.</span>
-              Some Things I've Built
+              {t.title}
             </h2>
           </motion.div>
 
@@ -93,7 +60,7 @@ export function Projects() {
                 className={`featured-project ${index % 2 === 1 ? 'reverse' : ''}`}
               >
                 <div className="project-content">
-                  <div className="project-overline">Featured Project</div>
+                  <div className="project-overline">{t.featuredProject}</div>
                   <h3 className="project-title">{project.title}</h3>
                   
                   <div className="glass-card project-description">
@@ -132,7 +99,7 @@ export function Projects() {
           </div>
 
           <motion.div variants={projectVariants} className="other-projects">
-            <h3 className="other-projects-title">Other Noteworthy Projects</h3>
+            <h3 className="other-projects-title">{t.otherProjects}</h3>
             
             <div className="projects-grid">
               {otherProjects.map((project, index) => (
