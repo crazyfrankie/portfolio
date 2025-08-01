@@ -37,7 +37,7 @@ export function Contact() {
         >
           <motion.div variants={itemVariants} className="section-header">
             <h2 className="section-title">
-              <span className="section-number">05.</span>
+              <span className="section-number">04.</span>
               Get In Touch
             </h2>
           </motion.div>

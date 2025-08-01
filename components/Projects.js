@@ -9,38 +9,43 @@ export function Projects() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js, Stripe, and PostgreSQL. Features include user authentication, product management, shopping cart, and payment processing.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Tailwind CSS"],
-      github: "#",
+      title: "Onlinejudge Evaluation System",
+      description:
+        "A secure online code evaluation system built with Docker and gVisor for sandboxing. Enforces resource limits via Linux CGroup and Namespace. Features asynchronous task processing using Kafka, in-memory caching with Redis, and real-time monitoring with Prometheus.",
+      tech: ["Gin", "GORM", "MySQL", "Redis", "Kafka", "Prometheus", "Docker"],
+      github: "https://github.com/crazyfrankie/onlinejudge",
       live: "#",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-      github: "#",
+      title: "Voidx: LLMOps Workflow Platform",
+      description:
+        "An intelligent agent platform powered by Docker, integrating models like Kimi and Qwen. Supports multi-agent orchestration, RAG-based retrieval using Milvus, tool invocation via FunctionCall/ReACT, and workflow chaining with Langchain.",
+      tech: ["Langchain", "PostgreSQL", "Milvus", "Kafka", "Docker"],
+      github: "https://github.com/crazyfrankie/voidx",
       live: "#",
       featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard that displays current weather and forecasts using OpenWeatherMap API with beautiful data visualizations.",
-      tech: ["Vue.js", "Chart.js", "OpenWeatherMap API", "Sass"],
-      github: "#",
+      title: "ZDocker: Lightweight Container Runtime",
+      description:
+        "A simplified Docker runtime built from scratch in Go. Implements Linux CGroup and Namespace isolation, image loading, overlay file system, and basic container lifecycle management without relying on containerd or runc.",
+      tech: ["Linux Namespace", "CGroup", "OverlayFS", "Go"],
+      github: "https://github.com/crazyfrankie/zdocker",
       live: "#",
-      featured: false
+      featured: true
     },
     {
-      title: "Portfolio Website",
-      description: "A modern portfolio website built with Next.js and Framer Motion, featuring dark mode, smooth animations, and responsive design.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      github: "#",
+      title: "Cloud: Object Storage System",
+      description:
+        "A cloud storage service powered by MinIO with EC-based redundancy. Supports multipart uploads, resumable transfers, and task orchestration via Kafka. Backend built with Gin and GORM, with observability through Prometheus.",
+      tech: ["Gin", "GORM", "MinIO", "MySQL", "Redis", "Kafka", "Prometheus"],
+      github: "https://github.com/crazyfrankie/cloud",
       live: "#",
       featured: false
     }
   ]
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,7 +80,7 @@ export function Projects() {
         >
           <motion.div variants={projectVariants} className="section-header">
             <h2 className="section-title">
-              <span className="section-number">04.</span>
+              <span className="section-number">03.</span>
               Some Things I've Built
             </h2>
           </motion.div>
