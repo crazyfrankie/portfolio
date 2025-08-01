@@ -13,18 +13,25 @@ export const translations = {
     about: {
       title: 'About Me',
       content: [
-        "Hello! I'm a passionate full-stack developer who enjoys creating things that live on the internet. My interest in web development started back in 2020 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!",
-        "Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.",
-        'I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.',
-        "Here are a few technologies I've been working with recently:"
+            "Hello! I'm a backend developer currently studying Computer Science and Technology as a third-year student at CQUT. I have a strong passion for programming and enjoy diving deep into backend technologies — especially in areas like distributed systems, distributed storage, and containerization.",
+            "My journey into development began in 2023, when I started experimenting with building simple systems and services. Since then, I've continued to explore the backend ecosystem, building various internal tools, business system backends, and experimenting with infrastructure technologies.",
+            "Fast-forward to today, I've had the opportunity to work on several projects, from full-featured web service backends to infrastructure-level tools. I enjoy solving real-world engineering problems and crafting robust, scalable services.",
+            "Recently, I've also been actively learning about system design and cloud-native architectures, and I'm particularly interested in how modern tools like Kubernetes and Docker are reshaping the way we build and deploy applications.",
+            "In parallel, I'm also actively learning about AI-related development — particularly around the architecture and implementation of agent platforms, inspired by tools like Coze, Dify, and n8n. I'm fascinated by how these systems orchestrate LLMs, tools, and workflows to build intelligent, autonomous agents, and I'm experimenting with building my own versions of such platforms.",
+            "Here are a few technologies I've been working with recently:",
       ],
       technologies: [
-        'JavaScript (ES6+)',
-        'TypeScript',
-        'React',
-        'Node.js',
-        'Next.js',
-        'Python'
+        'Golang',
+        'Gin',
+        'gRPC',
+        'GORM',
+        'Python',
+        'Kubernetes',
+        'Docker',
+        'Milvus',
+        'PostgreSQL',
+        'Raft',
+        'Langchain'
       ]
     },
 
